@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     env:
-      FUNC_APP_NAME: blogimagegenerator 
+      FUNC_APP_NAME: fn-slagdemoghdone 
             
     steps:
     - name: Download website
