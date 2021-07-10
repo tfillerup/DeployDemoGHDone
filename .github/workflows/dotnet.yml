@@ -29,6 +29,8 @@ jobs:
     - name: Test
       working-directory: './DemoFunction'
       run: dotnet test --no-build --verbosity normal
+    - name: Publish functions
+      run: dotnet publish --configuration Release --output ${{ env.OUTPUT_PATH }}
     - name: Package functions
       uses: actions/upload-artifact@v1
       with:
