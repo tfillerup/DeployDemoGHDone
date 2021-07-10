@@ -21,6 +21,8 @@ jobs:
       working-directory: './DemoFunction'
       run: dotnet restore
     - name: Build
+      working-directory: './DemoFunction'
       run: dotnet build --no-restore
     - name: Test
+      working-directory: './DemoFunction'
       run: dotnet test --no-build --verbosity normal
