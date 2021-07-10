@@ -1,5 +1,8 @@
 name: .NET
-
+env:
+    OUTPUT_PATH: ${{ github.workspace }}/.output
+    DOTNET_VERSION: "3.1.100"
+    
 on:
   push:
     branches: [ main ]
@@ -26,3 +29,8 @@ jobs:
     - name: Test
       working-directory: './DemoFunction'
       run: dotnet test --no-build --verbosity normal
+    - name: Package functions
+      uses: actions/upload-artifact@v1
+      with:
+          name: functions
+          path: ${{ env.OUTPUT_PATH }}
